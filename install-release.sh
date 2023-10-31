@@ -387,7 +387,7 @@ install_v2ray() {
 install_startup_service_file() {
   get_current_version
   if [[ "$(echo "${CURRENT_VERSION#v}" | sed 's/-.*//' | awk -F'.' '{print $1}')" -gt "4" ]]; then
-    START_COMMAND="/usr/local/bin/v2ray run"
+    START_COMMAND="/usr/local/bin/v2ray run -format jsonv5"
   else
     START_COMMAND="/usr/local/bin/v2ray"
   fi
